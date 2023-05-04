@@ -503,17 +503,17 @@ def writer(xmlfile, outdir, basename_extensions=None,
                 nodata = 255
             else:
                 nodata = 0
-                readers = workflow['operator=Read']
-                for reader in readers:
-                    infile = reader.parameters['file']
-                    print(f"Testing: {infile}")
-                    try:                    
-                        id = identify(infile)
-                        print(f"Using: {infile}")
-                        if id.sensor in ['ERS1', 'ERS2', 'ASAR']:
-                            nodata = 'NaN'
-                    except RuntimeError:
-                        continue 
+                # readers = workflow['operator=Read']
+                # for reader in readers:
+                #     infile = reader.parameters['file']
+                #     print(f"Testing: {infile}")
+                #     try:                    
+                #         id = identify(infile)
+                #         print(f"Using: {infile}")
+                #         if id.sensor in ['ERS1', 'ERS2', 'ASAR']:
+                #             nodata = 'NaN'
+                #     except RuntimeError:
+                #         continue 
             translateoptions['noData'] = nodata
             gdal_translate(item, name_new, translateoptions)
     else:
