@@ -120,3 +120,6 @@ dev_*
 
 # OSX tempfiles
 .DS_Store
+
+# Credentials
+config.ini
