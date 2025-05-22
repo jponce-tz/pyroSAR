@@ -123,3 +123,6 @@ dev_*
 
 # Credentials
 config.ini
+
+# Temporal files
+tmp/
