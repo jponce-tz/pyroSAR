@@ -515,7 +515,7 @@ def writer(xmlfile, outdir, basename_extensions=None,
                 #     except RuntimeError:
                 #         continue 
             translateoptions['noData'] = nodata
-            gdal_translate(item, name_new, translateoptions)
+            gdal_translate(item, name_new, **translateoptions)
     else:
         raise RuntimeError('The output file format must be ENVI or BEAM-DIMAP.')
     ###########################################################################
